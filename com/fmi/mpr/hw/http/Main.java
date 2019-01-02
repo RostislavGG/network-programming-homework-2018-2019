@@ -98,19 +98,65 @@ public class Main {
 	}
 	
 	private void sendText(PrintStream ps) throws IOException {
-		
+		File f = new File(fileName);
+		String path = f.getAbsolutePath();
+
+		FileInputStream fis = new FileInputStream(path);
+
+
+		int bytesRead = 0;
+		byte[] buffer = new byte[8192];
+ 		
+ 		while ((bytesRead = fis.read(buffer, 0, 8192)) > 0) {
+ 			ps.write(buffer, 0, bytesRead);
+ 		}
+ 		
+ 		ps.flush();
+ 		System.out.println("Send text");
+		fis.close();	
 	}
-	
+
 	private void sendPicture(PrintStream ps) throws IOException {
-		
+		File f = new File(fileName);
+		String path = f.getAbsolutePath();
+
+		FileInputStream fis = new FileInputStream(path);
+
+
+		int bytesRead = 0;
+		byte[] buffer = new byte[8192];
+ 		
+ 		while ((bytesRead = fis.read(buffer, 0, 8192)) > 0) {
+ 			ps.write(buffer, 0, bytesRead);
+ 		}
+ 		
+ 		ps.flush();
+ 		System.out.println("Send picture");
+		fis.close();	
 	}
 	
 	private void sendVideo(PrintStream ps) throws IOException {
-		
+		File f = new File(fileName);
+		String path = f.getAbsolutePath();
+
+		FileInputStream fis = new FileInputStream(path);
+
+
+		int bytesRead = 0;
+		byte[] buffer = new byte[8192];
+ 		
+ 		while ((bytesRead = fis.read(buffer, 0, 8192)) > 0) {
+ 			ps.write(buffer, 0, bytesRead);
+ 		}
+ 		
+ 		ps.flush();
+ 		System.out.println("Send video");
+		fis.close();	
 	}
 	
 	public static void main(String[] args) throws IOException {
 		Main n = new Main();
 		n.start();
 	}
+	
 }
